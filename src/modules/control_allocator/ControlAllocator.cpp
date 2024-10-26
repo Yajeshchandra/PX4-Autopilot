@@ -305,6 +305,7 @@ ControlAllocator::Run()
 	ScheduleDelayed(50_ms);
 #endif
 
+	
 	// Check if parameters have changed
 	if (_parameter_update_sub.updated() && !_armed) {
 		// clear update

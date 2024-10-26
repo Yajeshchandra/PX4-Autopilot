@@ -39,7 +39,6 @@
 #include <px4_platform_common/log.h>
 
 #include <mathlib/math/Functions.hpp>
-#include <matrix/Quaternion.hpp>
 
 
 using namespace matrix;

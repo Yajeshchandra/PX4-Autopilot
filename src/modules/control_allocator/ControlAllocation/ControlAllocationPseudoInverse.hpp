@@ -46,6 +46,9 @@
 #pragma once
 
 #include "ControlAllocation.hpp"
+#include <uORB/Publication.hpp>
+#include <uORB/Subscription.hpp>
+#include <uORB/topics/vehicle_motor_failure_status.h>
 
 class ControlAllocationPseudoInverse: public ControlAllocation
 {
@@ -59,6 +62,7 @@ public:
 				    bool update_normalization_scale) override;
 	void setMotorFailure(int motor_idx, bool failed);
 
+
 protected:
 	matrix::Matrix<float, NUM_ACTUATORS, NUM_AXES> _mix;
 
@@ -69,6 +73,7 @@ protected:
 	 *
 	 */
 	void updatePseudoInverse();
+
 
 private:
 	void normalizeControlAllocationMatrix();
@@ -81,4 +86,7 @@ private:
 	// New methods
 	void updateEffectivenessForFailure();
 	void computePrimaryAxis();
+
+
+
 };
